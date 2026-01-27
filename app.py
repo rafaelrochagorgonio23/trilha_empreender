@@ -149,4 +149,4 @@ if st.button("Gerar recomendação e salvar"):
                 tempo,
                 area,
                 trilha["nome"],
-                )],
+                ]),

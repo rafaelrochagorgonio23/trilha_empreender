@@ -140,7 +140,8 @@ if st.button("Gerar recomendação e salvar"):
 
     # Salva no Google Sheets (apenas campos simples)
     # Se quiser salvar tudo, use json.dumps(trilha, ensure_ascii=False)
-    try:
+    
+try:
         ws.append_row(
             [
                 datetime.now().isoformat(timespec="seconds"),
@@ -148,5 +149,10 @@ if st.button("Gerar recomendação e salvar"):
                 objetivo,
                 tempo,
                 area,
-                trilha["nome"],
-                ])
+                trilha["nome"],          # evite salvar o dict inteiro
+            ],
+            value_input_option="USER_ENTERED",
+        )
+        st.info("Registro salvo com sucesso na planilha. ✅")
+    except Exception as e:
+        st.error(f"Falha ao salvar no Google Sheets: {e}")

@@ -155,3 +155,7 @@ try:
         )
         st.info("Registro salvo com sucesso na planilha. ✅")
     
+except Exception as e:
+    st.error(f"Falha ao salvar no Google Sheets: {e}")
+
+    

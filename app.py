@@ -1,3 +1,23 @@
+import gspread
+from google.oauth2.service_account import Credentials
+
+# Configuração da API Google Sheets usando secrets
+scope = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive"
+]
+
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=scope
+)
+
+client = gspread.authorize(creds)
+
+# Abra a planilha (cole aqui o ID dela)
+SHEET_ID = "1tJUnK8kqe9uyRTCq20uSN5gswv1_0PpR1cMpxLq72gk"
+sheet = client.open_by_key(SHEET_ID).worksheet("A")
+
 import streamlit as st
 from trilhas import TRILHAS
 from recomendador import recomendar_trilha

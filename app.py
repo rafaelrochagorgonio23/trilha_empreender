@@ -150,11 +150,3 @@ if st.button("Gerar recomendação e salvar"):
                 area,
                 trilha["nome"],
             ],
-
-            
-value_input_option="USER_ENTERED",
-        )
-        st.info("Registro salvo com sucesso na planilha. ✅")
-    except Exception as e:
-        st.error(f"Falha ao salvar no Google Sheets: {e}")
-

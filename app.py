@@ -150,5 +150,3 @@ if st.button("Gerar recomendação e salvar"):
                 area,
                 trilha["nome"],
             ],
-            value_input_option="USER_ENTERED",
-        )

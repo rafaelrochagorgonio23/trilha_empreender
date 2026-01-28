@@ -569,7 +569,7 @@ TRILHAS = [
 },
 
 {
-  "area": "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)",
+  "area": "Serviços Financeiros Trading Pessoal",
   "nome": "Trader Pessoa Física (Day Trade/Swing Trade)",
   "descricao": "Operar ativos listados na B3 (ações, minicontratos de índice WIN e dólar WDO, ETFs e opções) buscando ganhos de curto prazo. Envolve gestão de risco rigorosa, controle emocional e cumprimento de obrigações fiscais mensais.",
   "passos": [

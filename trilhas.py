@@ -10,7 +10,7 @@ TRILHAS = [
         "exemplos": ["Canecas", "Camisetas", "Chaveiros"],
         "complexidade_deproducao": "Média",  # baixa | media | alta
         "margem_delucro": "Alta",          # baixa | media | alta | altissima
-        "risco_demercado": "Baixo (não estraga)",        # baixo | medio | alto
+        "risco_demercado": "Baixo",        # baixo | medio | alto
         "estimativa_investimentoinicial": 1800,
         "estimativa_capitaldegiro": 1000,
         "estimativa_rendimentosiniciomensal": {

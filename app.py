@@ -16,8 +16,10 @@ area = st.selectbox("Qual área você mais se identifica?", [
     
     "Alimentos e bebidas",
     "Artesanato",
+    "Comércio Varejista de Materiais de Construção",
     "Entregador de Comidas (iFood, Rappi, Apps Locais) - Logística de Entrega de Alimentos - Delivery",
     "Entregador de Mercadorias (Mercado Livre, Shopee, Amazon e Entregas Locais) - Logística Última Milha",
+    "Gestão de Tráfego Pago",
     "Moda e Brechó",
     "Pet e Bem-estar Animal",
     "Produtos personalizados Sublimação",
@@ -25,17 +27,19 @@ area = st.selectbox("Qual área você mais se identifica?", [
     "Serviços Digitais Edição de Vídeo",
     "Serviços Digitais Social Media",
     "Serviços de Tecnologia Suporte Técnico",
-    "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)"
+    "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)",
     "Serviços Pessoais Barbearia e Corte Masculino",
     "Serviços Pessoais Design de Sobrancelhas",
     "Serviços Pessoais Manicure e Cuidados com as Unhas",
     "Serviços Pessoais Salão de Beleza e Corte Feminino",
+    "Serviços Profissionais Marketing Digital",
     "Tecnologia / dados",
     "Tecnologia Impressão 3D",
     "Transporte Individual de Passageiros Motorista de Aplicativo",
     "Varejo Automotivo Baterias para Carros (linha leve)",
     "Varejo de Acessórios para Dispositivos Móveis - Loja de Acessórios para Celular e Tablet",
     "Varejo Materiais/Artigos Elétricos",
+    "YouTuber (Criação e Monetização de Vídeos no YouTube)",
    
 ])
 

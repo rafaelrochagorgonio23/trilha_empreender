@@ -570,6 +570,40 @@ TRILHAS = [
   "CAC": "Baixo (atração orgânica via redes sociais, indicação e localização)"
 },
 
+    {
+  "area": "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)",
+  "nome": "Trader Pessoa Física (Day Trade/Swing Trade)",
+  "descricao": "Operar ativos listados na B3 (ações, minicontratos de índice WIN e dólar WDO, ETFs e opções) buscando ganhos de curto prazo. Envolve gestão de risco rigorosa, controle emocional e cumprimento de obrigações fiscais mensais.",
+  "passos": [
+    "Escolher mercado(s) principal(is): minicontratos (WIN/WDO) e/ou ações/ETFs (swing trade)",
+    "Abrir conta em corretora regulada no Brasil, habilitar plataformas de negociação e dados em tempo real",
+    "Definir estratégia com regras objetivas (setup de entrada/saída, R:R, horário, ativos, filtros de volatilidade)",
+    "Implantar gestão de risco (ex.: arriscar 0,5%–1% do capital por trade; stop obrigatório; limite diário de perdas)",
+    "Iniciar no simulador e depois migrar para conta real em tamanho reduzido, com diário de trades",
+    "Criar rotina operacional (plano pré‑mercado, execução, pós‑mercado com review e métricas)",
+    "Organizar a parte fiscal: apuração mensal, DARF, compensação de prejuízos e guarda de notas de corretagem",
+    "Ajustar a estratégia com base em métricas (taxa de acerto, payoff, drawdown, desvio padrão dos resultados)"
+  ],
+  "exemplos": [
+    "Day trade em mini índice (WIN) com rompimento de faixa de abertura",
+    "Day trade em mini dólar (WDO) com pullback em VWAP",
+    "Swing trade em ações de alta liquidez (ex.: PETR4, VALE3) por rompimento de resistência",
+    "Operação com ETFs (ex.: BOVA11) para movimentos de 2–10 dias",
+    "Lançamento coberto de opções (estratégia de renda com ações em carteira, não alavancada)"
+  ],
+  "complexidade_deproducao": "Alta (exige método, disciplina, controle emocional e métricas)",
+  "margem_delucro": "Altamente variável; para iniciantes, tende a ser baixa ou negativa no início",
+  "risco_demercado": "Muito alto (alavancagem, volatilidade, risco de execução e psicológico)",
+  "estimativa_investimentoinicial": 10000,
+  "estimativa_capitaldegiro": 1500,
+  "estimativa_rendimentosiniciomensal": {
+    "Conservador": "",
+    "Provavel": "",
+    "Otimista": 2500
+  },
+  "CAC": "Inexistente (não há clientes). Custos principais: tarifas B3, eventual corretagem, plataforma e dados em tempo real."
+}
+
 
     
     

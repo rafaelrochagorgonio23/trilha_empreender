@@ -98,17 +98,3 @@ if st.button("Gerar trilha"):
     st.write(trilha['CAC'])
 
 st.markdown("---")
-
-# (Opcional) Aba lateral para Dashboard/Exportar
-aba = st.sidebar.radio("Navegação", ["App", "Dashboard", "Exportar"], index=0)
-if aba == "Dashboard":
-     from dashboard import show_dashboard
-     show_dashboard(db)
-     elif aba == "Exportar":
-         from export import exportar_csv
-         nome = exportar_csv(db)
-         if nome:
-             with open(nome, "rb") as f:
-                 st.download_button("Baixar CSV", f, file_name=nome, mime="text/csv")
-         else:
-             st.info("Sem dados para exportar.")

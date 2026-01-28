@@ -25,6 +25,7 @@ area = st.selectbox("Qual área você mais se identifica?", [
     "Serviços Digitais Edição de Vídeo",
     "Serviços Digitais Social Media",
     "Serviços de Tecnologia Suporte Técnico",
+    "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)"
     "Serviços Pessoais Barbearia e Corte Masculino",
     "Serviços Pessoais Design de Sobrancelhas",
     "Serviços Pessoais Manicure e Cuidados com as Unhas",

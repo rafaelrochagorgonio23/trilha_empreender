@@ -1,7 +1,5 @@
 TRILHAS = [
 
-
-
     {
         "area": "Produtos personalizados Sublimação",
         "nome": "Produtos personalizados - Sublimação",
@@ -10,7 +8,7 @@ TRILHAS = [
         "exemplos": ["Canecas", "Camisetas", "Chaveiros"],
         "complexidade_deproducao": "Média",  # baixa | media | alta
         "margem_delucro": "Alta",          # baixa | media | alta | altissima
-        "risco_demercado": "Baixo",        # baixo | medio | alto
+        "risco_demercado": "Baixo (não estraga)",        # baixo | medio | alto
         "estimativa_investimentoinicial": 1800,
         "estimativa_capitaldegiro": 1000,
         "estimativa_rendimentosiniciomensal": {
@@ -570,7 +568,7 @@ TRILHAS = [
   "CAC": "Baixo (atração orgânica via redes sociais, indicação e localização)"
 },
 
-    {
+{
   "area": "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)",
   "nome": "Trader Pessoa Física (Day Trade/Swing Trade)",
   "descricao": "Operar ativos listados na B3 (ações, minicontratos de índice WIN e dólar WDO, ETFs e opções) buscando ganhos de curto prazo. Envolve gestão de risco rigorosa, controle emocional e cumprimento de obrigações fiscais mensais.",
@@ -602,9 +600,153 @@ TRILHAS = [
     "Otimista": 2500
   },
   "CAC": "Inexistente (não há clientes). Custos principais: tarifas B3, eventual corretagem, plataforma e dados em tempo real."
-}
+},
+
+{
+  "area": "Comércio Varejista de Materiais de Construção",
+  "nome": "Depósito de Materiais de Construção (Home Center de Bairro)",
+  "descricao": "Venda de materiais básicos e acabamentos para obras e reformas: cimento, argamassa, areia/ brita (via terceiros), blocos, tubos e conexões, ferragens, tintas e ferramentas. Operação com loja física, entregas locais e canais digitais (WhatsApp, Google Perfil, Instagram).",
+  "passos": [
+    "Definir o posicionamento: básico de obra (giro alto e preço) ou misto (básico + acabamentos/tintas)",
+    "Escolher ponto com acesso fácil a veículos de carga leve, espaço para estocagem e área de carregamento",
+    "Regularizar CNAE e licenças (alvará, Vigilância/Prefeitura, AVCB quando aplicável) e contratar seguro patrimonial",
+    "Mapear fornecedores locais/regionais (cimento, tintas, PVC, ferragens) e negociar prazos e consignação quando possível",
+    "Montar mix mínimo (famílias A/B/C: estrutura, hidráulica, elétrica, pintura, ferragens e EPI) e política de preços",
+    "Definir logística: frota própria leve (1 utilitário) ou terceirização por freteiro; regras de frete por raio/bairro",
+    "Implantar sistema simples de PDV/estoque e catálogo digital (lista de preços + fotos) para WhatsApp e Google Perfil",
+    "Treinar equipe em atendimento consultivo, conferência de cargas e venda adicional (cross/upsell)",
+    "Criar calendário de promoções (ex.: semana da reforma, combos de argamassa + rejunte) e programa de fidelidade",
+    "Operar com disciplina de caixa: giro de estoque, compras semanais e metas por categoria"
+  ],
+  "exemplos": [
+    "Linha básica: cimento CP II, argamassa AC1/AC2, rejunte, blocos/vedação, areia e brita via parceiro",
+    "Hidráulica: tubos e conexões PVC soldável/esgoto, registros, válvulas e kits de reparo",
+    "Elétrica: cabos, disjuntores, tomadas, conduítes e caixas de passagem",
+    "Pintura: massas PVA/ACR, seladores, tintas (línea econômica e standard) e acessórios (rolos, bandejas, fitas)",
+    "Ferramentas e EPI: trenas, chaves, discos de corte, luvas, óculos",
+    "Serviços: entrega agendada por bairro, corte simples de madeira/MDF (se houver), montagem de combos por ambiente"
+  ],
+  "complexidade_deproducao": "Média a Alta (exige gestão de estoque, negociação com fornecedores, logística e fluxo de caixa)",
+  "margem_delucro": "Média (itens de giro têm margem menor; acabamentos e acessórios melhoram margem composta)",
+  "risco_demercado": "Médio (sensível ao ciclo da construção local, concorrência de grandes redes e variação de preços de cimento/tintas)",
+  "estimativa_investimentoinicial": 120000,
+  "estimativa_capitaldegiro": 30000,
+  "estimativa_rendimentosiniciomensal": {
+    "Conservador": 8000,
+    "Provavel": 20000,
+    "Otimista": 45000
+  },
+  "CAC": "Baixo a Médio (atração orgânica por localização, Google Perfil e indicações de pedreiros; reforço com panfletagem e promoções locais)"
+},
+
+{
+  "area": "Serviços Profissionais Marketing Digital",
+  "nome": "Gestão de Marketing Digital para Pequenos Negócios",
+  "descricao": "Planejamento, execução e otimização de presença digital para comércios e prestadores de serviço: gestão de redes sociais, tráfego pago, SEO local, conteúdo e automações leves. Modelo enxuto (home office) com pacotes mensais.",
+  "passos": [
+    "Definir posicionamento e nicho inicial (ex.: saúde/beleza, food service, construção, serviços locais)",
+    "Escolher ofertas principais e pacotes (Social Media, Tráfego Pago, SEO Local, Conteúdo/Copy, Combo)",
+    "Configurar estrutura: marca simples, portfólio, proposta padrão, contrato, conta PJ/MEI e emissão de NF",
+    "Montar stack mínima: agendamento de posts, design básico, gestor de anúncios, CRM/automação e drive",
+    "Criar 3 pacotes de assinatura mensais (Lite, Standard, Pro) com escopo e SLA claros",
+    "Prospecção ativa e canais orgânicos: Google Perfil (seu), Instagram/LinkedIn, indicações e cold outreach",
+    "Onboarding: diagnóstico, metas SMART, calendário editorial, pixels e conversões, UTMs e dashboards",
+    "Operação e melhoria contínua: reuniões mensais, relatórios com KPIs e otimizações por ciclo (30 dias)"
+  ],
+  "exemplos": [
+    "Gestão de Instagram + Facebook com 12 a 20 peças/mês e calendário editorial",
+    "Tráfego pago local (Meta Ads/Google Ads) para captação de leads ou vendas com orçamento do cliente",
+    "SEO local: otimização de Google Perfil, citações NAP, reviews e conteúdo de blog de cauda longa",
+    "Funil simples: lead magnet + landing page + automação de e-mails/WhatsApp",
+    "Copywriting para páginas de vendas e anúncios",
+    "Relatórios mensais com KPIs (alcance, leads, CPA, ROAS) e plano de ação"
+  ],
+  "complexidade_deproducao": "Média (exige método, organização, entendimento de métricas e ferramentas)",
+  "margem_delucro": "Alta (serviço de conhecimento com custos fixos baixos; ferramentas escaláveis)",
+  "risco_demercado": "Médio (concorrência alta e churn; retenção depende de prova de valor e resultados)",
+  "estimativa_investimentoinicial": 2500,
+  "estimativa_capitaldegiro": 600,
+  "estimativa_rendimentosiniciomensal": {
+    "Conservador": 2000,
+    "Provavel": 5000,
+    "Otimista": 12000
+  },
+  "CAC": "Baixo a Médio (orgânico e indicações reduzem CAC; outbound e anúncios próprios elevam CAC no início)"
+},
+
+{
+  "area": "YouTuber (Criação e Monetização de Vídeos no YouTube)",
+  "nome": "YouTuber (Criação e Monetização de Vídeos no YouTube)",
+  "descricao": "Produção recorrente de vídeos para o YouTube com foco em um nicho específico, otimizando títulos/descrições/miniaturas (SEO), criando consistência de publicação e múltiplas fontes de receita (AdSense, afiliados, patrocínios e produtos próprios).",
+  "passos": [
+    "Definir nicho e proposta de valor (ex.: tecnologia acessível, produtividade, finanças pessoais, carreira em TI, vlogs locais)",
+    "Escolher formato principal (tutoriais, reviews, estudos de caso, shorts diários, entrevistas, lives) e frequência (ex.: 2 vídeos longos + 3 shorts/semana)",
+    "Montar setup mínimo (celular com boa câmera, microfone lapela, iluminação básica, tripé) e roteiro simples (hook → valor → call‑to‑action)",
+    "Criar identidade visual e padrões (intro curta, lower thirds, moldes de thumbnail, trilha livre de royalties)",
+    "Configurar o canal (banner, sobre, links, playlists, tags, tela final, cards) e painel de análise (YouTube Studio)",
+    "Planejar conteúdo por ciclos (calendário editorial de 4 semanas; batches de gravação/edição; lista de ideias e palavras‑chave)",
+    "Publicar, otimizar e distribuir (SEO, capítulos, shorts de reaproveitamento, posts na comunidade, redes sociais/WhatsApp)",
+    "Monetizar em camadas (AdSense quando elegível; links de afiliados; patrocínios; infoproduto/mentoria; membros do canal)",
+    "Medir e ajustar (taxa de clique da thumbnail, retenção média, tempo de exibição, fontes de tráfego; testes A/B de títulos e capas)",
+    "Criar ativos de lista (captura de e‑mail/WhatsApp) para reduzir dependência do algoritmo e aumentar LTV por seguidor"
+  ],
+  "exemplos": [
+    "Tutoriais práticos (ex.: Python para automação, IA no dia a dia, planilhas inteligentes)",
+    "Reviews e comparativos (gadgets acessíveis, apps de produtividade, cursos online)",
+    "Séries temáticas semanais (ex.: 'Desafio 30 dias de Data Science')",
+    "Estudos de caso/entrevistas com profissionais da área",
+    "Shorts com dicas rápidas, atalhos, news do nicho",
+    "Lives de Q&A e code‑along com a audiência"
+  ],
+  "complexidade_deproducao": "Média (exige constância, habilidades básicas de roteiro, gravação, edição e leitura de métricas)",
+  "margem_delucro": "Alta no médio prazo (custos fixos baixos; escalabilidade por visualizações e produtos digitais)",
+  "risco_demercado": "Médio a Alto (dependência do algoritmo, forte concorrência e tempo até tração/monetização)",
+  "estimativa_investimentoinicial": 2500,
+  "estimativa_capitaldegiro": 300,
+  "estimativa_rendimentosiniciomensal": {
+    "Conservador": "",
+    "Provavel": 500,
+    "Otimista": 3000
+  },
+  "CAC": "Baixo (atração orgânica por SEO, shorts e consistência; pode incluir impulsos pontuais e colabs para acelerar tração)"
+},
+
+{
+  "area": "Gestão de Tráfego Pago",
+  "nome": "Gestão de Tráfego Pago",
+  "descricao": "Prestação de serviços de gestão de anúncios online para empresas e profissionais. Inclui criação de campanhas, configuração de pixels, otimização de públicos, análise de métricas, testes A/B, relatórios e estratégia para aquisição de clientes (leads ou vendas). Ideal para negócios locais, e-commerces e infoprodutores.",
+  "passos": [
+    "Definir o modelo de atuação (especialista em Meta Ads, Google Ads ou gestor multiplataforma)",
+    "Criar portfólio e proposta comercial com pacotes (fixo mensal + taxa de setup ou bônus por performance)",
+    "Configurar ferramentas essenciais: BM/Meta Business Suite, Google Ads, Google Tag Manager, GA4",
+    "Estabelecer metodologia de campanhas (funis: reconhecimento → consideração → conversão)",
+    "Criar criativos (imagem, vídeo, copy), landing pages e parâmetros UTM",
+    "Rodar testes A/B contínuos (criativos, públicos, posicionamentos, lances)",
+    "Acompanhar métricas diariamente e otimizar campanhas (CPA, ROAS, CTR, CPM)",
+    "Gerar relatórios mensais e reuniões de alinhamento com clientes",
+    "Criar processos de retenção (onboarding, expectativas claras, metas SMART)",
+    "Escalar operação com delegação de design/landing pages e automações"
+  ],
+  "exemplos": [
+    "Campanhas de geração de leads (imobiliárias, clínicas, cursos)",
+    "Campanhas de vendas para e-commerce (catálogo dinâmico, remarketing)",
+    "Campanhas locais para serviços (restaurantes, academias, salões)",
+    "Funis para infoprodutores (páginas de captura, VSL, remarketing)",
+    "Otimização de campanhas no Google (Pesquisa, Display, YouTube)",
+    "Criação de públicos personalizados e lookalike"
+  ],
+  "complexidade_deproducao": "Alta (exige domínio de ferramentas, análise de métricas, estratégia e entrega de resultados mensuráveis)",
+  "margem_delucro": "Alta (serviço digital com custos fixos baixos; maior custo é tempo e ferramentas)",
+  "risco_demercado": "Médio (concorrência alta; dependência de resultados e possível churn)",
+  "estimativa_investimentoinicial": 2500,
+  "estimativa_capitaldegiro": 300,
+  "estimativa_rendimentosiniciomensal": {
+    "Conservador": 1500,
+    "Provavel": 4000,
+    "Otimista": 10000
+  },
+  "CAC": "Baixo a médio (atração via indicações, marketing pessoal e redes sociais; outbound e anúncios aumentam CAC, mas aceleram crescimento)"
+},
 
 
-    
-    
 ]

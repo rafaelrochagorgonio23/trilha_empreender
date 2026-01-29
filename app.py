@@ -102,13 +102,11 @@ st.markdown("---")
 
 
 
-import json, os, streamlit as st
+# apagar os dados (admin)
+from tinydb import TinyDB
+from pathlib import Path
  
-st.markdown("### Debug de dados (temporário)")
-st.write("Pasta existe?", os.path.isdir("dados"))
-st.write("Arquivo existe?", os.path.isfile("dados/eventos.json"))
-if os.path.isfile("dados/eventos.json"):
-    with open("dados/eventos.json", "r", encoding="utf-8") as f:
-        st.json(json.load(f))
-else:
-    st.info("Ainda não há eventos.json; interaja no app (ex.: clique em 'Gerar trilha').")
+DB_FILE = Path(__file__).resolve().parent / "dados" / "eventos.json"
+db = TinyDB(DB_FILE)
+db.table("eventos").truncate()  # limpa a tabela
+db.close()

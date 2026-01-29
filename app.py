@@ -100,7 +100,7 @@ if st.button("Gerar trilha"):
 
 st.markdown("---")
 
-#import json, os, streamlit as st
+import json, os, streamlit as st
 
 #st.markdown("### Debug de dados (temporário)")
 st.write("Pasta existe?", os.path.isdir("dados"))

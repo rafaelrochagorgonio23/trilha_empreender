@@ -1,6 +1,7 @@
 import streamlit as st
 from trilhas import TRILHAS
 from recomendador import recomendar_trilha
+import json, os, streamlit as st
 
 # >>> ADD: imports de persistência/analytics
 from persistencia import get_db
@@ -99,13 +100,13 @@ if st.button("Gerar trilha"):
 
 st.markdown("---")
 
-import json, os, streamlit as st
+#import json, os, streamlit as st
 
-st.markdown("### Debug de dados (temporário)")
-st.write("Pasta existe?", os.path.isdir("dados"))
-st.write("Arquivo existe?", os.path.isfile("dados/eventos.json"))
-if os.path.isfile("dados/eventos.json"):
-    with open("dados/eventos.json", "r", encoding="utf-8") as f:
-        st.json(json.load(f))
-else:
-    st.info("Ainda não há eventos.json; interaja no app (ex.: clique em 'Gerar trilha').")
+#st.markdown("### Debug de dados (temporário)")
+#st.write("Pasta existe?", os.path.isdir("dados"))
+#st.write("Arquivo existe?", os.path.isfile("dados/eventos.json"))
+#if os.path.isfile("dados/eventos.json"):
+    #with open("dados/eventos.json", "r", encoding="utf-8") as f:
+        #st.json(json.load(f))
+#else:
+    #st.info("Ainda não há eventos.json; interaja no app (ex.: clique em 'Gerar trilha').")

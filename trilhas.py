@@ -749,42 +749,43 @@ TRILHAS = [
 },
 
     {
-  "area": "Serviços Pessoais Lavanderia e Cuidados com Roupas",
+  "area": "Lavanderia Express",
   "nome": "Lavanderia Express",
-  "descricao": "Serviço de lavagem, secagem e passadoria de roupas com entrega rápida. Pode operar em ponto físico ou via retirada e entrega em domicílio. Ideal para clientes que buscam praticidade, economia de tempo e cuidado profissional com suas roupas.",
-  
+  "descricao": "Serviço de lavagem, secagem e passadoria com entrega rápida, usando máquinas de alta performance e processos padronizados para roupas do dia a dia e peças delicadas.",
+
   "passos": [
-    "Definir o modelo de atuação (ponto físico, delivery 100% ou modelo híbrido)",
-    "Adquirir máquinas de lavar industriais ou semiprofissionais, secadoras e equipamentos de passar",
-    "Estabelecer um espaço organizado para separação, lavagem, secagem e finalização",
-    "Criar tabela de serviços (kg de roupa, passadoria, itens delicados, serviços express)",
-    "Implementar processo padrão de higienização e embalagem das peças",
-    "Criar perfil no Google Empresas, Instagram e grupos de bairro",
-    "Oferecer retirada e entrega para aumentar conveniência",
-    "Criar planos mensais e fidelidade para clientes recorrentes"
+    "Definir modelo de atuação (ponto físico, delivery ou híbrido)",
+    "Comprar máquinas lava e seca profissionais (mín. 12kg a 15kg) e secadoras de alta capacidade",
+    "Montar área de lavagem, secagem, passadoria e embalagem",
+    "Criar tabela de serviços por kg, peça, express e itens especiais",
+    "Criar fluxo operacional para evitar atrasos e misturas de roupas",
+    "Cadastrar o negócio no Google Empresas e redes sociais",
+    "Oferecer retirada/entrega e planos mensais para recorrência"
   ],
 
   "exemplos": [
+    "Lavagem por kg",
     "Lavagem expressa (entrega no mesmo dia)",
-    "Lavagem de peças delicadas",
-    "Lavagem de edredons e cobertores",
-    "Retirada e entrega em domicílio (delivery)"
+    "Passadoria profissional",
+    "Lavagem de edredons",
+    "Roupas sociais e delicadas",
+    "Serviço com retirada e entrega"
   ],
 
-  "complexidade_deproducao": "Média (exige logística simples, organização de processos e bons equipamentos)",
-  "margem_delucro": "Média a Alta (custo operacional moderado, boa recorrência de clientes)",
-  "risco_demercado": "Médio (concorrência razoável e necessidade de boa localização)",
+  "complexidade_deproducao": "Média (exige máquinas confiáveis, espaço adequado e processos eficientes)",
+  "margem_delucro": "Média a alta",
+  "risco_demercado": "Médio",
 
-  "estimativa_investimentoinicial": 9000,
-  "estimativa_capitaldegiro": 1200,
+  "estimativa_investimentoinicial": 35000,
+  "estimativa_capitaldegiro": 3000,
 
   "estimativa_rendimentosiniciomensal": {
-    "Conservador": 2500,
-    "Provavel": 6000,
-    "Otimista": 12000
+    "Conservador": 4500,
+    "Provavel": 9000,
+    "Otimista": 16000
   },
 
-  "CAC": "Baixo a médio (atração orgânica por localização e indicações; pode exigir impulsionamento no início)"
+  "CAC": "Médio (maior parte vem de bairro e Google Empresas)"
 },
 
 

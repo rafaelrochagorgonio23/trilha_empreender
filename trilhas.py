@@ -16,7 +16,7 @@ TRILHAS = [
             "Provavel": 2500,
             "Otimista": 4000
         },
-        "CAC": "Baixo"  # zero | baixo | medio_alto | altissimo
+        "CAC": "Baixo"  
     },
 
 

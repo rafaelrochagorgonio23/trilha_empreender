@@ -33,7 +33,7 @@ area = st.selectbox("Qual área você mais se identifica?", [
     "Entregador de Comidas (iFood, Rappi, Apps Locais) - Logística de Entrega de Alimentos - Delivery",
     "Entregador de Mercadorias (Mercado Livre, Shopee, Amazon e Entregas Locais) - Logística Última Milha",
     "Gestão de Tráfego Pago",
-    "Lavanderia Express e Cuidados com Roupas",
+    "Lavanderia Express",
     "Moda e Brechó",
     "Pet e Bem-estar Animal",
     "Produtos personalizados Sublimação",

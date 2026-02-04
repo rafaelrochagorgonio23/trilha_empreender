@@ -748,5 +748,44 @@ TRILHAS = [
   "CAC": "Baixo a médio (atração via indicações, marketing pessoal e redes sociais; outbound e anúncios aumentam CAC, mas aceleram crescimento)"
 },
 
+    {
+  "area": "Serviços Pessoais Lavanderia e Cuidados com Roupas",
+  "nome": "Lavanderia Express",
+  "descricao": "Serviço de lavagem, secagem e passadoria de roupas com entrega rápida. Pode operar em ponto físico ou via retirada e entrega em domicílio. Ideal para clientes que buscam praticidade, economia de tempo e cuidado profissional com suas roupas.",
+  
+  "passos": [
+    "Definir o modelo de atuação (ponto físico, delivery 100% ou modelo híbrido)",
+    "Adquirir máquinas de lavar industriais ou semiprofissionais, secadoras e equipamentos de passar",
+    "Estabelecer um espaço organizado para separação, lavagem, secagem e finalização",
+    "Criar tabela de serviços (kg de roupa, passadoria, itens delicados, serviços express)",
+    "Implementar processo padrão de higienização e embalagem das peças",
+    "Criar perfil no Google Empresas, Instagram e grupos de bairro",
+    "Oferecer retirada e entrega para aumentar conveniência",
+    "Criar planos mensais e fidelidade para clientes recorrentes"
+  ],
+
+  "exemplos": [
+    "Lavagem expressa (entrega no mesmo dia)",
+    "Lavagem de peças delicadas",
+    "Lavagem de edredons e cobertores",
+    "Retirada e entrega em domicílio (delivery)"
+  ],
+
+  "complexidade_deproducao": "Média (exige logística simples, organização de processos e bons equipamentos)",
+  "margem_delucro": "Média a Alta (custo operacional moderado, boa recorrência de clientes)",
+  "risco_demercado": "Médio (concorrência razoável e necessidade de boa localização)",
+
+  "estimativa_investimentoinicial": 9000,
+  "estimativa_capitaldegiro": 1200,
+
+  "estimativa_rendimentosiniciomensal": {
+    "Conservador": 2500,
+    "Provavel": 6000,
+    "Otimista": 12000
+  },
+
+  "CAC": "Baixo a médio (atração orgânica por localização e indicações; pode exigir impulsionamento no início)"
+},
+
 
 ]

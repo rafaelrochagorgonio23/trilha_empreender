@@ -5,7 +5,7 @@ TRILHAS = [
         "nome": "Produtos personalizados - Sublimação",
         "descricao": "Comece vendendo produtos personalizados com baixo investimento.",
         "passos": ["Entender demanda local", "Escolher fornecedores", "Criar canal de vendas"],
-        "exemplos": ["Canecas", "Camisetas", "Chaveiros"],
+        "exemplos": ["Canecas", "Camisetas", "Canetas", "Chaveiros"],
         "complexidade_deproducao": "Média",  # baixa | media | alta
         "margem_delucro": "Alta",          # baixa | media | alta | altissima
         "risco_demercado": "Baixo (não estraga)",        # baixo | medio | alto

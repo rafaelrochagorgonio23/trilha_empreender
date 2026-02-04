@@ -749,7 +749,7 @@ TRILHAS = [
 },
 
     {
-  "area": "Lavanderia Express",
+  "area": "Lavanderia Express e Cuidados com Roupas",
   "nome": "Lavanderia Express",
   "descricao": "Serviço de lavagem, secagem e passadoria com entrega rápida, usando máquinas de alta performance e processos padronizados para roupas do dia a dia e peças delicadas.",
 

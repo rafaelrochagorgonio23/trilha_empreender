@@ -749,43 +749,43 @@ TRILHAS = [
 },
 
     {
-  "area": "Lavanderia Express e Cuidados com Roupas",
-  "nome": "Lavanderia Express",
-  "descricao": "Serviço de lavagem, secagem e passadoria com entrega rápida, usando máquinas de alta performance e processos padronizados para roupas do dia a dia e peças delicadas.",
-
-  "passos": [
-    "Definir modelo de atuação (ponto físico, delivery ou híbrido)",
-    "Comprar máquinas lava e seca profissionais (mín. 12kg a 15kg) e secadoras de alta capacidade",
-    "Montar área de lavagem, secagem, passadoria e embalagem",
-    "Criar tabela de serviços por kg, peça, express e itens especiais",
-    "Criar fluxo operacional para evitar atrasos e misturas de roupas",
-    "Cadastrar o negócio no Google Empresas e redes sociais",
-    "Oferecer retirada/entrega e planos mensais para recorrência"
-  ],
-
-  "exemplos": [
-    "Lavagem por kg",
-    "Lavagem expressa (entrega no mesmo dia)",
-    "Passadoria profissional",
-    "Lavagem de edredons",
-    "Roupas sociais e delicadas",
-    "Serviço com retirada e entrega"
-  ],
-
-  "complexidade_deproducao": "Média (exige máquinas confiáveis, espaço adequado e processos eficientes)",
-  "margem_delucro": "Média a alta",
-  "risco_demercado": "Médio",
-
-  "estimativa_investimentoinicial": 35000,
-  "estimativa_capitaldegiro": 3000,
-
-  "estimativa_rendimentosiniciomensal": {
-    "Conservador": 4500,
-    "Provavel": 9000,
-    "Otimista": 16000
-  },
-
-  "CAC": "Médio (maior parte vem de bairro e Google Empresas)"
+      "area": "Lavanderia Express",
+      "nome": "Lavanderia Express",
+      "descricao": "Serviço de lavagem, secagem e passadoria com entrega rápida, usando máquinas de alta performance e processos padronizados para roupas do dia a dia e peças delicadas.",
+    
+      "passos": [
+        "Definir modelo de atuação (ponto físico, delivery ou híbrido)",
+        "Comprar máquinas lava e seca profissionais (mín. 12kg a 15kg) e secadoras de alta capacidade",
+        "Montar área de lavagem, secagem, passadoria e embalagem",
+        "Criar tabela de serviços por kg, peça, express e itens especiais",
+        "Criar fluxo operacional para evitar atrasos e misturas de roupas",
+        "Cadastrar o negócio no Google Empresas e redes sociais",
+        "Oferecer retirada/entrega e planos mensais para recorrência"
+      ],
+    
+      "exemplos": [
+        "Lavagem por kg",
+        "Lavagem expressa (entrega no mesmo dia)",
+        "Passadoria profissional",
+        "Lavagem de edredons",
+        "Roupas sociais e delicadas",
+        "Serviço com retirada e entrega"
+      ],
+    
+      "complexidade_deproducao": "Média (exige máquinas confiáveis, espaço adequado e processos eficientes)",
+      "margem_delucro": "Média a alta",
+      "risco_demercado": "Médio",
+    
+      "estimativa_investimentoinicial": 35000,
+      "estimativa_capitaldegiro": 3000,
+    
+      "estimativa_rendimentosiniciomensal": {
+        "Conservador": 4500,
+        "Provavel": 9000,
+        "Otimista": 16000
+      },
+    
+      "CAC": "Médio (maior parte vem de bairro e Google Empresas)"
 },
 
 

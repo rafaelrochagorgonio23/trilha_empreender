@@ -1,255 +1,101 @@
-# ------------------------ IMPORTS ------------------------
-import io
-from datetime import datetime
-
 import streamlit as st
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import cm
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
-from reportlab.lib import colors
+from trilhas import TRILHAS
+from recomendador import recomendar_trilha
 
-# ---------------------------------------------------------
-# Utilidades e normalizações
-# ---------------------------------------------------------
 
-def brl(valor):
-    """Formata número em BRL. Para '', None e não numéricos, retorna '—'."""
-    try:
-        if valor in ("", None): 
-            return "—"
-        v = float(valor)
-        return "R$ " + f"{v:,.0f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    except Exception:
-        return str(valor) if valor not in ("", None) else "—"
+# >>> ADD: imports de persistência/analytics
+from persistencia import get_db
+from analytics import on_app_load, log_event
+# (opcional) from dashboard import show_dashboard
+# (opcional) from export import exportar_csv
 
-def normaliza_cenarios(cenarios_dict):
-    """
-    Normaliza as chaves do dicionário de cenários para: Conservador, Provavel, Otimista.
-    Aceita variações: 'conservador', 'Conservador', 'otimista', etc.
-    """
-    alvo = {"Conservador": "—", "Provavel": "—", "Otimista": "—"}
-    if not isinstance(cenarios_dict, dict):
-        return alvo
-    m = {k.strip().lower(): v for k, v in cenarios_dict.items()}
-    if "conservador" in m: alvo["Conservador"] = brl(m["conservador"])
-    if "provavel" in m or "provável" in m:
-        alvo["Provavel"] = brl(m.get("provavel", m.get("provável")))
-    if "otimista" in m: alvo["Otimista"] = brl(m["otimista"])
-    return alvo
+st.set_page_config(page_title="Trilha Empreender", page_icon="📈")
+st.title("📈Trilha Empreender")
+st.write("Descubra o próximo passo ideal para sua jornada.")
 
-def recomendar_trilha_por_area(area_escolhida: str, trilhas: list[dict]) -> dict | None:
-    """
-    Retorna a primeira trilha que bate com a área selecionada.
-    (Se quiser lógica mais sofisticada com perfil/objetivo, me diga e eu ajusto.)
-    """
-    for t in trilhas:
-        if str(t.get("area", "")).strip().lower() == str(area_escolhida).strip().lower():
-            return t
-    return None
+# >>> ADD: criar instância de DB (cacheada para a sessão do app)
+@st.cache_resource(show_spinner=False)
+def _db():
+    return get_db()
+db = _db()
 
-def opcoes_de_area(trilhas: list[dict]) -> list[str]:
-    """Lista única de áreas para o selectbox."""
-    vistas = []
-    for t in trilhas:
-        a = t.get("area")
-        if a and a not in vistas:
-            vistas.append(a)
-    return vistas
+# >>> ADD: registra page_view ao abrir
+on_app_load(db)
 
-# ---------------------------------------------------------
-# Geração do PDF (com base no seu TRILHAS)
-# ---------------------------------------------------------
+perfil = st.selectbox("Qual é sua situação atual?", ["Iniciante", "Estudante", "CLT", "Autônomo", "Já empreendo"])
+objetivo = st.selectbox("Qual é seu principal objetivo?", ["Renda extra", "Empreender", "Mudar de carreira", "Validar ideia"])
+tempo = st.selectbox("Em quanto tempo você espera resultados?", ["Até 3 meses", "3 a 6 meses", "Mais de 6 meses"])
 
-def gerar_pdf_trilha(form_data: dict, trilha: dict) -> bytes:
-    """
-    form_data: dict com dados do formulário (perfil, objetivo, tempo, area)
-    trilha: item do TRILHAS selecionado
-    """
-    buffer = io.BytesIO()
-    doc = SimpleDocTemplate(
-        buffer,
-        pagesize=A4,
-        leftMargin=2*cm, rightMargin=2*cm, topMargin=2*cm, bottomMargin=2*cm,
-        title=f"Trilha - {trilha.get('nome','')}",
-        author="Aplicativo de Trilhas"
-    )
+area = st.selectbox("Qual área você mais se identifica?", [
+    "Alimentos e bebidas",
+    "Artesanato",
+    "Comércio Varejista de Materiais de Construção",
+    "Entregador de Comidas (iFood, Rappi, Apps Locais) - Logística de Entrega de Alimentos - Delivery",
+    "Entregador de Mercadorias (Mercado Livre, Shopee, Amazon e Entregas Locais) - Logística Última Milha",
+    "Gestão de Tráfego Pago",
+    "Moda e Brechó",
+    "Pet e Bem-estar Animal",
+    "Produtos personalizados Sublimação",
+    "Serviços Digitais Design",
+    "Serviços Digitais Edição de Vídeo",
+    "Serviços Digitais Social Media",
+    "Serviços de Tecnologia Suporte Técnico",
+    "Serviços Financeiros (Trading Pessoal em Mercados Regulados no Brasil)",
+    "Serviços Pessoais Barbearia e Corte Masculino",
+    "Serviços Pessoais Design de Sobrancelhas",
+    "Serviços Pessoais Manicure e Cuidados com as Unhas",
+    "Serviços Pessoais Salão de Beleza e Corte Feminino",
+    "Serviços Profissionais Marketing Digital",
+    "Tecnologia / dados",
+    "Tecnologia Impressão 3D",
+    "Transporte Individual de Passageiros Motorista de Aplicativo",
+    "Varejo Automotivo Baterias para Carros (linha leve)",
+    "Varejo de Acessórios para Dispositivos Móveis - Loja de Acessórios para Celular e Tablet",
+    "Varejo Materiais/Artigos Elétricos",
+    "YouTuber (Criação e Monetização de Vídeos no YouTube)",
+])
 
-    styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name="Titulo", parent=styles["Heading1"], spaceAfter=12))
-    styles.add(ParagraphStyle(name="Subtitulo", parent=styles["Heading2"], textColor=colors.HexColor("#1f4e79"), spaceAfter=8))
-    styles.add(ParagraphStyle(name="Body", parent=styles["BodyText"], leading=14))
-    styles.add(ParagraphStyle(name="Label", parent=styles["BodyText"], textColor=colors.grey, spaceAfter=4))
-
-    story = []
-
-    # Cabeçalho
-    story.append(Paragraph("Trilha Recomendada", styles["Titulo"]))
-    story.append(Paragraph(datetime.now().strftime("%d/%m/%Y %H:%M"), styles["Label"]))
-    story.append(Spacer(1, 12))
-
-    # Resumo do formulário
-    resumo_data = [
-        ["Perfil", str(form_data.get("perfil", ""))],
-        ["Objetivo", str(form_data.get("objetivo", ""))],
-        ["Tempo disponível", str(form_data.get("tempo", ""))],
-        ["Área escolhida", str(form_data.get("area", ""))],
-    ]
-    tabela_resumo = Table(resumo_data, colWidths=[4*cm, 10*cm])
-    tabela_resumo.setStyle(TableStyle([
-        ("BOX", (0,0), (-1,-1), 0.5, colors.grey),
-        ("INNERGRID", (0,0), (-1,-1), 0.25, colors.grey),
-        ("BACKGROUND", (0,0), (0,-1), colors.whitesmoke),
-        ("VALIGN", (0,0), (-1,-1), "TOP"),
-        ("ALIGN", (0,0), (-1,-1), "LEFT"),
-    ]))
-    story.append(Paragraph("Informações do formulário", styles["Subtitulo"]))
-    story.append(tabela_resumo)
-    story.append(Spacer(1, 14))
-
-    # Título + descrição da trilha
-    if trilha.get("nome"):
-        story.append(Paragraph(trilha["nome"], styles["Subtitulo"]))
-    if trilha.get("descricao"):
-        story.append(Paragraph(str(trilha["descricao"]), styles["Body"]))
-        story.append(Spacer(1, 10))
-
-    # Bloco: Viabilidade / Risco / Margem / CAC
-    cenarios = normaliza_cenarios(trilha.get("estimativa_rendimentosiniciomensal"))
-    bloco_viabilidade = [
-        ["Complexidade de produção", str(trilha.get("complexidade_deproducao", "—"))],
-        ["Margem de lucro", str(trilha.get("margem_delucro", "—"))],
-        ["Risco de mercado", str(trilha.get("risco_demercado", "—"))],
-        ["CAC", str(trilha.get("CAC", "—"))],
-        ["Investimento inicial", brl(trilha.get("estimativa_investimentoinicial"))],
-        ["Capital de giro", brl(trilha.get("estimativa_capitaldegiro"))],
-    ]
-    tabela_viabilidade = Table(bloco_viabilidade, colWidths=[6*cm, 8*cm])
-    tabela_viabilidade.setStyle(TableStyle([
-        ("BOX", (0,0), (-1,-1), 0.5, colors.grey),
-        ("INNERGRID", (0,0), (-1,-1), 0.25, colors.grey),
-        ("BACKGROUND", (0,0), (0,-1), colors.HexColor("#f6f6f6")),
-    ]))
-    story.append(Paragraph("Viabilidade e indicadores", styles["Subtitulo"]))
-    story.append(tabela_viabilidade)
-    story.append(Spacer(1, 10))
-
-    # Bloco: Estimativa de rendimentos
-    tabela_renda = Table(
-        [["Cenário", "Estimativa mensal"],
-         ["Conservador", cenarios["Conservador"]],
-         ["Provável", cenarios["Provavel"]],
-         ["Otimista", cenarios["Otimista"]]],
-        colWidths=[5*cm, 9*cm]
-    )
-    tabela_renda.setStyle(TableStyle([
-        ("BOX", (0,0), (-1,-1), 0.5, colors.grey),
-        ("INNERGRID", (0,0), (-1,-1), 0.25, colors.grey),
-        ("BACKGROUND", (0,0), (-1,0), colors.HexColor("#e8f0fe")),
-    ]))
-    story.append(Paragraph("Estimativas de rendimentos iniciais (mensal)", styles["Subtitulo"]))
-    story.append(tabela_renda)
-    story.append(Spacer(1, 10))
-
-    # Passos
-    passos = trilha.get("passos", [])
-    if isinstance(passos, (list, tuple)) and passos:
-        story.append(Paragraph("Principais passos", styles["Subtitulo"]))
-        for i, p in enumerate(passos, 1):
-            story.append(Paragraph(f"{i}. {p}", styles["Body"]))
-        story.append(Spacer(1, 8))
-
-    # Exemplos
-    exemplos = trilha.get("exemplos", [])
-    if isinstance(exemplos, (list, tuple)) and exemplos:
-        story.append(Paragraph("Exemplos", styles["Subtitulo"]))
-        for ex in exemplos:
-            story.append(Paragraph(f"• {ex}", styles["Body"]))
-        story.append(Spacer(1, 8))
-
-    # Observação legal/sanidade de estimativas
-    story.append(Spacer(1, 12))
-    story.append(Paragraph(
-        "Observação: As estimativas são aproximadas e não constituem garantia de resultados. "
-        "Faça sua validação local de demanda, custos e preços.",
-        styles["Label"]
-    ))
-
-    # Página 2 opcional (se desejar, descomente para separar seções longas)
-    # story.append(PageBreak())
-
-    doc.build(story)
-    pdf_bytes = buffer.getvalue()
-    buffer.close()
-    return pdf_bytes
-
-# ---------------------------------------------------------
-# UI Streamlit (exemplo integrado ao seu fluxo)
-# ---------------------------------------------------------
-
-st.title("Trilhas para Empreender")
-
-# As áreas vêm diretamente do seu TRILHAS
-areas_disp = opcoes_de_area(TRILHAS)
-
-col1, col2 = st.columns(2)
-with col1:
-    perfil = st.selectbox("Qual é o seu perfil?", ["Iniciante", "Intermediário", "Avançado"])
-    tempo = st.selectbox("Quanto tempo você tem por semana?", ["2h", "4h", "6h", "8h+"])
-with col2:
-    objetivo = st.text_input("Qual é seu objetivo principal?")
-    area = st.selectbox("Qual área você mais se identifica?", areas_disp)
+# >>> ADD: logar mudanças importantes (opcional, mas útil)
+# Você pode logar quando o usuário altera seleções:
+log_event(db, "form_update", {"perfil": perfil, "objetivo": objetivo, "tempo": tempo, "area": area})
 
 if st.button("Gerar trilha"):
-    trilha = recomendar_trilha_por_area(area, TRILHAS)
+    # >>> ADD: log de clique de CTA
+    log_event(db, "cta_click", {"cta": "gerar_trilha", "perfil": perfil, "objetivo": objetivo, "tempo": tempo, "area": area})
 
-    if not trilha:
-        st.error("Não encontrei trilha para a área selecionada. Verifique as opções.")
-        st.stop()
+    trilha = recomendar_trilha(perfil, objetivo, area)
 
-    st.write("---")
-    st.subheader(trilha.get("nome", "Trilha"))
-    if trilha.get("descricao"): st.write(trilha["descricao"])
+    st.write("---Estimativas de mercado com base em estatística---")
+    st.subheader(trilha['nome'])
+    st.write(trilha['descricao'])
 
-    st.markdown("**Principais passos:**")
-    for p in trilha.get("passos", []):
-        st.write(f"- {p}")
+    st.write("**Primeiros passos:")
+    for passo in trilha['passos']:
+        st.write(f"- {passo}")
 
-    st.markdown("**Exemplos:**")
-    for ex in trilha.get("exemplos", []):
-        st.write(f"- {ex}")
+    st.write("**Exemplos:")
+    for exemplo in trilha['exemplos']:
+        st.write(f"- {exemplo}")
 
-    st.markdown("**Complexidade de produção:**")
-    st.write(trilha.get("complexidade_deproducao", "—"))
+    st.write("**Complexidade de produção:")
+    st.write(trilha['complexidade_deproducao'])
 
-    st.markdown("**Margem de lucro / Risco de mercado / CAC:**")
-    st.write(
-        f"- Margem: {trilha.get('margem_delucro', '—')}\n"
-        f"- Risco: {trilha.get('risco_demercado', '—')}\n"
-        f"- CAC: {trilha.get('CAC', '—')}"
-    )
+    st.write("**Margem de lucro:")
+    st.write(trilha['margem_delucro'])
 
-    st.markdown("**Investimentos e rendimentos iniciais (mensal):**")
-    cen = normaliza_cenarios(trilha.get("estimativa_rendimentosiniciomensal"))
-    st.write(
-        f"- Investimento inicial: {brl(trilha.get('estimativa_investimentoinicial'))}\n"
-        f"- Capital de giro: {brl(trilha.get('estimativa_capitaldegiro'))}\n"
-        f"- Conservador: {cen['Conservador']} | Provável: {cen['Provavel']} | Otimista: {cen['Otimista']}"
-    )
+    st.write("**Risco de mercado: É o risco de um investimento perder valor por causa de mudanças nas condições do mercado, como: Variação de preços (ações, moedas, commodities), variação das taxas de juros, inflação inesperada, crises econômicas ou políticas e mudança na oferta e demanda.")
+    st.write(trilha['risco_demercado'])
 
-    # Monta o dicionário do formulário para o PDF
-    form_data = {
-        "perfil": perfil,
-        "objetivo": objetivo,
-        "tempo": tempo,
-        "area": area
-    }
+    st.write("**Estimativa de investimento:")
+    st.write(trilha['estimativa_investimentoinicial'])
 
-    # Gera PDF e oferece para download
-    pdf_bytes = gerar_pdf_trilha(form_data, trilha)
-    st.download_button(
-        label="⬇️ Baixar PDF da trilha",
-        data=pdf_bytes,
-        file_name=f"trilha_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf",
-        mime="application/pdf"
-    )
+    st.write("**Estimativa de capital de giro no início até o negócio atingir o ponto de equilíbrio - Break-even - Momento em que as receitas totais de uma empresa se igualam aos seus custos totais:")
+    st.write(trilha['estimativa_capitaldegiro'])
+
+    st.write("**Estimativa de rendimento inicial mensal:")
+    st.write(trilha['estimativa_rendimentosiniciomensal'])
+
+    st.write("**CAC - Custo de aquisição de clientes - CAC = (Total gasto em marketing + total gasto em vendas) / número de novos clientes no período:")
+    st.write(trilha['CAC'])
+
+st.markdown("---")

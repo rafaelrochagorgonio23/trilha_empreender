@@ -34,6 +34,7 @@ area = st.selectbox("Qual área você mais se identifica?", [
     "Entregador de Mercadorias (Mercado Livre, Shopee, Amazon e Entregas Locais) - Logística Última Milha",
     "Gestão de Tráfego Pago",
     "Lavanderia Express",
+    "Logística Farmacêutica Local",
     "Moda e Brechó",
     "Pet e Bem-estar Animal",
     "Produtos personalizados Sublimação",

@@ -788,5 +788,51 @@ TRILHAS = [
       "CAC": "Médio (maior parte vem de bairro e Google Empresas)"
 },
 
+    {
+      "area": "Logística Farmacêutica Local",
+      
+      "nome": "Serviço de Entregas B2B para Farmácias (Courier Farmacêutico Local)",
+      
+      "descricao": "Serviço de coleta e entrega rápida entre distribuidores e farmácias. O profissional realiza transporte de pequenos volumes de medicamentos e itens farmacêuticos, sem armazenar produtos e sem necessidade de AFE. Operação focada em rapidez, confiabilidade e rotas comerciais urbanas.",
+      
+      "passos": [
+        "Definir o modelo de atuação (motocicleta própria, carro próprio ou terceirizado)",
+        "Regularizar MEI com CNAE permitido para entregas e courier",
+        "Adquirir mochila térmica ou baú adequado para transporte protegido",
+        "Criar tabela de preços por entrega, rota fixa ou contrato mensal",
+        "Apresentar o serviço a farmácias e distribuidores da região",
+        "Organizar rotas otimizadas para reduzir combustível e tempo",
+        "Manter comunicação rápida com clientes via WhatsApp Business",
+        "Oferecer entregas rastreáveis e previsão de horário para maior confiança"
+      ],
+      
+      "exemplos": [
+        "Coleta em distribuidor e entrega em farmácias locais",
+        "Entrega expressa para farmácias que precisam de reposição urgente",
+        "Rotas diárias de entrega para drogarias de bairro",
+        "Entrega de perfumaria, dermocosméticos e itens de higiene",
+        "Entrega de pequenos volumes entre filiais de redes de farmácia",
+        "Serviço de retorno (coleta de notas ou documentos)"
+      ],
+      
+      "complexidade_deproducao": "Baixa a média (exige organização logística, pontualidade e cuidado no transporte)",
+      
+      "margem_delucro": "Alta (serviço com custo operacional baixo e demanda constante)",
+      
+      "risco_demercado": "Baixo (pouca concorrência específica, alta necessidade das farmácias por entregas rápidas)",
+      
+      "estimativa_investimentoinicial": 1500,
+      
+      "estimativa_capitaldegiro": 400,
+      
+      "estimativa_rendimentosiniciomensal": {
+        "Conservador": 2000,
+        "Provavel": 4500,
+        "Otimista": 9000
+      },
+      
+      "CAC": "Baixo (prospecção direta, indicações e relacionamento local com farmácias e distribuidores)"
+}
+
 
 ]

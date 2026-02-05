@@ -880,5 +880,51 @@ TRILHAS = [
       "CAC": "Baixo (clientes chegam por indicação, Google Perfil e reputação local)"
 },
 
+    {
+      "area": "Marketing de Afiliados",
+    
+      "nome": "Marketing de Afiliados",
+    
+      "descricao": "Atividade de promoção de produtos físicos ou digitais de terceiros utilizando links de afiliado. O afiliado recebe comissões por vendas geradas através de suas recomendações. Pode operar com redes sociais, blogs, anúncios pagos, YouTube, e estratégias de tráfego orgânico ou pago. Não exige estoque, nem atendimento ao cliente.",
+    
+      "passos": [
+        "Escolher o nicho de atuação (saúde, finanças, beleza, educação, tecnologia, etc.)",
+        "Cadastrar-se em plataformas de afiliados (Hotmart, Eduzz, Amazon Afiliados, Shopee, Lomadee)",
+        "Selecionar produtos com boa comissão e alta taxa de conversão",
+        "Criar canais de divulgação (Instagram, TikTok, YouTube, blog ou página de vendas)",
+        "Produzir conteúdos úteis e de alto valor relacionados ao nicho escolhido",
+        "Criar estratégia de tráfego: orgânico, pago ou ambos",
+        "Monitorar métricas como cliques, conversões e ROI da campanha",
+        "Ajustar campanhas com base nos melhores resultados e aumentar escala"
+      ],
+    
+      "exemplos": [
+        "Divulgação de produtos digitais no Instagram",
+        "Recomendações de produtos da Amazon com link afiliado",
+        "Vídeos de análise e review no YouTube com links de compra",
+        "Páginas de conteúdo otimizado para SEO gerando tráfego orgânico",
+        "Campanhas pagas no Google Ads ou Meta Ads",
+        "Conteúdos no TikTok com call to action para produtos"
+      ],
+    
+      "complexidade_deproducao": "Média (exige entendimento de marketing digital, criação de conteúdo e análise de métricas)",
+    
+      "margem_delucro": "Alta (não exige estoque, logística ou produto próprio, apenas conhecimento e tráfego)",
+    
+      "risco_demercado": "Médio (alta concorrência e dependência de plataformas, porém escalável e acessível)",
+    
+      "estimativa_investimentoinicial": 300,
+    
+      "estimativa_capitaldegiro": 200,
+    
+      "estimativa_rendimentosiniciomensal": {
+        "Conservador": 500,
+        "Provavel": 2000,
+        "Otimista": 8000
+      },
+    
+      "CAC": "Médio a baixo (pode ser quase zero com tráfego orgânico; aumenta no caso de anúncios pagos)"
+},
+
 
 ]

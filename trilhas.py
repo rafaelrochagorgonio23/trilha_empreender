@@ -876,7 +876,7 @@ TRILHAS = [
       },
     
       "CAC": "Baixo (clientes chegam por indicação, Google Empresas e reputação local)"
-}
+},
 
 
 ]

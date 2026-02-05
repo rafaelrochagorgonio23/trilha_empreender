@@ -853,8 +853,6 @@ TRILHAS = [
       ],
     
       "exemplos": [
-        "Reparo de geladeira (falta de refrigeração, troca de termostato)",
-        "Conserto de máquina de lavar (bomba, rolamento, placa)",
         "Reparo de micro-ondas (magnetron, fusível, placa)",
         "Conserto de ventiladores e liquidificadores",
         "Manutenção preventiva em eletrodomésticos",

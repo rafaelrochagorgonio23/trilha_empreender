@@ -834,5 +834,49 @@ TRILHAS = [
       "CAC": "Baixo (prospecção direta, indicações e relacionamento local com farmácias e distribuidores)"
 }
 
+    {
+      "area": "Conserto de Eletrodomésticos",
+    
+      "nome": "Conserto de Eletrodomésticos",
+    
+      "descricao": "Serviço de diagnóstico, manutenção e reparo de eletrodomésticos como geladeiras, máquinas de lavar, micro-ondas, ventiladores, liquidificadores e outros equipamentos. Pode ser realizado em oficina própria ou via atendimento domiciliar, exigindo ferramentas adequadas, conhecimento técnico e capacidade de identificar defeitos rapidamente.",
+    
+      "passos": [
+        "Definir o modelo de atuação (oficina própria, atendimento a domicílio ou modelo híbrido)",
+        "Adquirir ferramentas básicas de reparo: multímetro, chaves, alicates, solda, kits de limpeza, peças de reposição",
+        "Criar espaço organizado para teste e diagnóstico de aparelhos",
+        "Escolher nicho inicial: linha branca (geladeira, máquina), pequenos eletrodomésticos ou ambos",
+        "Criar tabela de serviços e taxa de visita técnica (diagnóstico)",
+        "Divulgar no Google Perfil, OLX, Facebook, Instagram e grupos locais",
+        "Estabelecer parcerias com síndicos, condomínios e lojas de usados",
+        "Oferecer garantia do serviço e atendimento rápido para aumentar confiança"
+      ],
+    
+      "exemplos": [
+        "Reparo de micro-ondas (magnetron, fusível, placa)",
+        "Conserto de ventiladores e liquidificadores",
+        "Manutenção preventiva em eletrodomésticos",
+        "Atendimento a domicílio com taxa de visita"
+      ],
+    
+      "complexidade_deproducao": "Média a alta (exige conhecimento técnico, diagnóstico correto e ferramentas especializadas)",
+    
+      "margem_delucro": "Alta (mão de obra valorizada, peças de reposição baratas e pouca necessidade de capital inicial)",
+    
+      "risco_demercado": "Baixo (demanda constante, concorrência moderada e serviços essenciais para casas e comércios)",
+    
+      "estimativa_investimentoinicial": 2000,
+    
+      "estimativa_capitaldegiro": 500,
+    
+      "estimativa_rendimentosiniciomensal": {
+        "Conservador": 2000,
+        "Provavel": 4500,
+        "Otimista": 9000
+      },
+    
+      "CAC": "Baixo (clientes chegam por indicação, Google Empresas e reputação local)"
+}
+
 
 ]

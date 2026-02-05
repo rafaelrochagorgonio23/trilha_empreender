@@ -36,6 +36,7 @@ area = st.selectbox("Qual área você mais se identifica?", [
     "Gestão de Tráfego Pago",
     "Lavanderia Express",
     "Logística Farmacêutica Local",
+    "Marketing de Afiliados",
     "Moda e Brechó",
     "Pet e Bem-estar Animal",
     "Produtos personalizados Sublimação",
